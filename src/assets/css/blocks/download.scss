@@ -1,0 +1,86 @@
+.download__grid {
+    display: grid;
+    align-items: center;
+    gap: rem(30);
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #1D1E22;
+    padding: rem(95) rem(70);
+    border-radius: rem(50);
+    @include adp("padding-right", 70, 15);
+    @include adp("padding-left", 70, 15);
+    @include adp("padding-top", 95, 30);
+    @include adp("padding-bottom", 95, 30);
+
+    @media (max-width: em(767)) {
+        grid-template-columns: 1fr;
+        background: none;
+    }
+}
+
+.download__title {
+    font-family: 'Monument';
+    font-size: rem(30);
+    font-weight: 400;
+    max-width: rem(550);
+    @include adp("font-size", 30, 24);
+
+    @media (max-width: em(767)) {
+        text-align: center;
+        max-width: unset;
+    }
+}
+
+.download__block {
+    display: flex;
+    gap: rem(20);
+
+    @media (max-width: em(1200)) {
+        flex-direction: column;
+    }
+}
+
+.download__apple-btn,
+.download__android-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(10);
+    text-decoration: none;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: rem(20);
+    padding: rem(20) rem(70);
+    border-radius: rem(50);
+    border: 0;
+    transition: all .2s;
+    white-space: nowrap;
+}
+
+.download__apple-btn {
+    background-color: #2C2D31;
+    color: white;
+
+    @media (min-width: em(1024)) {
+        &:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 5px 5px 0 0 #52FFE0;
+        }
+    }
+}
+
+.download__android-btn {
+    background-color: #52FFE0;
+    color: #1D1E22;
+
+    @media (min-width: em(1024)) {
+        &:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 5px 5px 0 0 #7F1CFC;
+        }
+    }
+}
+
+._icon-apple,
+._icon-android {
+    font-size: rem(30);
+}

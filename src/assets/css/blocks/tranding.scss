@@ -1,0 +1,27 @@
+.tranding__wrapper {
+    position: relative;
+
+    .swiper-pagination-horizontal {
+        bottom: rem(-30);
+    }
+}
+
+.tranding__slider-wrapper {
+    padding: rem(10) 0;
+}
+
+
+.tranding__button-next {
+    right: 0;
+    transform: translateX(50%);
+    left: unset;
+}
+
+.tranding__button-prev {
+    left: 0;
+    transform: translateX(-50%);
+
+    &::before {
+        transform: rotate(180deg);
+    }
+}

@@ -1,0 +1,26 @@
+.categories__wrapper {
+    position: relative;
+
+    .swiper-pagination-horizontal {
+        bottom: rem(-30);
+    }
+}
+
+.categories__slider-wrapper {
+    padding: rem(10) 0;
+}
+
+.categories__button-next {
+    right: 0;
+    transform: translateX(50%);
+    left: unset;
+}
+
+.categories__button-prev {
+    left: 0;
+    transform: translateX(-50%);
+
+    &::before {
+        transform: rotate(180deg);
+    }
+}

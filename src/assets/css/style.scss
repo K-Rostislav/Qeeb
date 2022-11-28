@@ -1,0 +1,38 @@
+@import "vendor/reset";
+@import "vendor/fonts";
+@import "vendor/options";
+@import "vendor/mixins";
+
+body {
+    font-family: 'Red Rose';
+    background-color: #101010;
+    color: white;
+}
+
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Common styles */
+@import "vendor/common-styles";
+
+/* Blocks */
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/intro";
+@import "blocks/categories";
+@import "blocks/collections";
+@import "blocks/tranding";
+@import "blocks/insights";
+@import "blocks/download";
