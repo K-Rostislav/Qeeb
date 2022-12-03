@@ -150,6 +150,10 @@ function images() {
         .pipe(gulp.dest('dist/assets/img'))
         .pipe(browsersync.stream())
 }
+function favicon() {
+    return gulp.src(`./*.{svg,png,ico}`)
+        .pipe(gulp.dest(`./dist`))
+}
 function ttf() {
     return gulp.src(`${path.src.assets}/fonts/*.otf`)
         .pipe(plumber(
@@ -205,7 +209,7 @@ function fontsIconCss() {
 
 const iconFonts = parallel(fontsIcon, fontsIconCss)
 const fonts = gulp.series(ttf, woffWoff2);
-const copyParallel = gulp.parallel(copyMinCss, images, copyJS, fonts, copyHTML, iconFonts);
+const copyParallel = gulp.parallel(copyMinCss, images, copyJS, fonts, copyHTML, iconFonts, favicon);
 export const deployZIP = gulp.series(dell, copyParallel, zip);
 
 const def = gulp.series(dell, copyParallel, gulp.parallel(watcher, browser));
