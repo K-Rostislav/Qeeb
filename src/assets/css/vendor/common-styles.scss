@@ -37,6 +37,7 @@
 }
 
 .burger {
+    padding-bottom: rem(50);
     width: 50%;
     height: 100vh;
     position: absolute;
@@ -46,6 +47,7 @@
     transform: translateX(105%);
     transition: transform .2s;
     display: none;
+    overflow: auto;
 
     &_active {
         transform: translateX(0);
@@ -182,8 +184,12 @@
 
 .padding {
     padding: rem(120) 0;
-    @include adp("padding-top", 120, 50);
-    @include adp("padding-bottom", 120, 50);
+    @include adp("padding-top", 120, 40);
+    @include adp("padding-bottom", 120, 40);
+
+    &_slider-section {
+        @include adp("padding-bottom", 120, 70);
+    }
 }
 
 .collections-card {
@@ -476,11 +482,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 1s;
-
-            &:hover {
-                transform: scale(1.1);
-            }
         }
     }
 
@@ -547,6 +548,42 @@
                 outline-offset: 5px;
             }
         }
+    }
+}
 
+.input {
+    display: flex;
+
+    input {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid #3FC9B0;
+        outline: 0;
+        padding: 0 rem(30) rem(10) 0;
+        font-family: 'Red Rose';
+        transition: border .2s;
+
+        &:focus {
+            border-bottom: 1px solid #1D1E22;
+
+            ._icon-arrow {
+                color: #7F1CFC;
+                display: none;
+            }
+        }
+    }
+
+    ._icon-arrow {
+        border: 0;
+        background: 0;
+        font-size: rem(20);
+        color: #1D1E22;
+        margin: 0 0 rem(10) rem(-20);
+        cursor: pointer;
+        transition: transform .2s;
+
+        &:hover {
+            transform: scale(1.7);
+        }
     }
 }

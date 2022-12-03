@@ -36,6 +36,8 @@
 
     @media (max-width: em(1200)) {
         flex-direction: column;
+        max-width: rem(320);
+        margin: 0 auto;
     }
 }
 
@@ -50,6 +52,10 @@
     font-weight: 500;
     font-size: rem(20);
     padding: rem(20) rem(70);
+    @include adp("padding-top", 20, 10);
+    @include adp("padding-bottom", 20, 10);
+    @include adp("padding-left", 70, 40);
+    @include adp("padding-right", 70, 40);
     border-radius: rem(50);
     border: 0;
     transition: all .2s;
@@ -66,6 +72,11 @@
             box-shadow: 5px 5px 0 0 #52FFE0;
         }
     }
+
+    @media (max-width: em(1023)) {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 0 0 #52FFE0;
+    }
 }
 
 .download__android-btn {
@@ -77,6 +88,11 @@
             transform: translate(-5px, -5px);
             box-shadow: 5px 5px 0 0 #7F1CFC;
         }
+    }
+
+    @media (max-width: em(1023)) {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 0 0 #7F1CFC;
     }
 }
 

@@ -1,4 +1,6 @@
 new Swiper('.categories__slider', {
+    spaceBetween: 30,
+
     breakpoints: {
         1700: {
             slidesPerView: 6,
@@ -15,12 +17,14 @@ new Swiper('.categories__slider', {
         480: {
             slidesPerView: 2,
         },
+        380: {
+            slidesPerView: 1.8,
+            spaceBetween: 15,
+        },
         0: {
-            slidesPerView: 1.3,
+            slidesPerView: 1,
         }
     },
-
-    spaceBetween: 30,
 
     pagination: {
         el: '.categories__pagination',
