@@ -480,7 +480,6 @@
     flex-direction: column;
     align-items: flex-start;
 
-
     &__img-link {
         width: 100%;
         max-height: rem(312);
@@ -566,6 +565,7 @@
 
 .input {
     display: flex;
+    position: relative;
 
     input {
         background: none;
@@ -575,9 +575,19 @@
         padding: 0 rem(30) rem(10) 0;
         font-family: 'Red Rose';
         transition: border .2s;
+        font-size: rem(16);
+
+        &::placeholder {
+            color: #2c8f7d;
+        }
+
 
         &:focus {
             border-bottom: 1px solid #1D1E22;
+
+            &::placeholder {
+                color: #1D1E22;
+            }
 
             ._icon-arrow {
                 color: #7F1CFC;
@@ -586,17 +596,40 @@
         }
     }
 
+    &_error {
+        input {
+            border-bottom: 1px solid red;
+            color: red;
+
+            &::placeholder {
+                color: red;
+            }
+        }
+
+        .input-error {
+            display: block;
+        }
+    }
+
     ._icon-arrow {
         border: 0;
         background: 0;
-        font-size: rem(20);
+        font-size: rem(30);
         color: #1D1E22;
-        margin: 0 0 rem(10) rem(-20);
+        margin: 0 0 rem(5) rem(-20);
         cursor: pointer;
         transition: transform .2s;
 
         &:hover {
-            transform: scale(1.7);
+            transform: scale(1.4);
         }
     }
+}
+
+.input-error {
+    color: red;
+    position: absolute;
+    bottom: rem(-25);
+    left: 0;
+    display: none;
 }

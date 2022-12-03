@@ -9,6 +9,7 @@ new Swiper('.categories__slider', {
             slidesPerView: 5,
         },
         900: {
+            spaceBetween: 15,
             slidesPerView: 4,
         },
         768: {
@@ -19,7 +20,6 @@ new Swiper('.categories__slider', {
         },
         380: {
             slidesPerView: 1.8,
-            spaceBetween: 15,
         },
         0: {
             slidesPerView: 1,
