@@ -27,10 +27,10 @@
     }
 }
 
-.footer__logo {
+.footer__logo-block {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     @media (max-width: em(1200)) {
         grid-row: 2 / 3;
@@ -41,6 +41,19 @@
         display: none;
     }
 }
+
+.footer__logo-link {
+    max-width: rem(150);
+    @include adp("max-width", 150, 100);
+    height: rem(60);
+}
+
+.footer__logo {
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+}
+
 
 .footer__col {
     @media (max-width: em(479)) {

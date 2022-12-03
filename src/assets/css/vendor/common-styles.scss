@@ -139,19 +139,37 @@
     }
 }
 
+.padding {
+    padding: rem(120) 0;
+    @include adp("padding-top", 120, 40);
+    @include adp("padding-bottom", 120, 40);
+
+    &_slider-section {
+        @include adp("padding-bottom", 120, 70);
+    }
+}
+
 .category-card {
-    padding: rem(10) rem(10) rem(40);
     background: #2C2D31;
-    display: flex;
-    flex-direction: column;
     border-radius: rem(50);
-    gap: rem(50) rem(10);
     cursor: pointer;
     transition: all .5s;
     position: relative;
+    overflow: hidden;
 
-    &__img {
+    &__link {
+        display: flex;
+        flex-direction: column;
+        gap: rem(50) rem(10);
+        padding: rem(10) rem(10) rem(40);
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__img-block {
         max-width: rem(225);
+        width: 100%;
         margin: 0 auto;
         height: rem(225);
         display: flex;
@@ -159,16 +177,17 @@
         align-items: center;
         overflow: hidden;
         border-radius: rem(50);
+    }
 
-        img {
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__name {
+        color: white;
         margin: auto auto 0;
         font-size: rem(24);
         font-weight: 700;
@@ -179,16 +198,6 @@
             transform: translateY(-10px);
             box-shadow: 0px 10px 0px 0px #59DCDC;
         }
-    }
-}
-
-.padding {
-    padding: rem(120) 0;
-    @include adp("padding-top", 120, 40);
-    @include adp("padding-bottom", 120, 40);
-
-    &_slider-section {
-        @include adp("padding-bottom", 120, 70);
     }
 }
 
@@ -214,16 +223,18 @@
         }
     }
 
-    &__img {
+    &__img-block {
         width: rem(100);
         height: rem(100);
+        border-radius: rem(30);
+        overflow: hidden;
+    }
 
-        img {
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__name {
@@ -298,7 +309,7 @@
             transform: translateY(-10px);
             box-shadow: 0 10px 0px 0px #59DCDC;
 
-            .tranding-card__img {
+            .tranding-card__img-block {
                 &::after {
                     animation: collections-card-scale .5s forwards;
                 }
@@ -310,7 +321,7 @@
         text-decoration: none;
     }
 
-    &__img {
+    &__img-block {
         width: 100%;
         height: rem(350);
         border-radius: rem(37) rem(37) 0 0;
@@ -338,13 +349,13 @@
                 }
             }
         }
+    }
 
-        img {
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__content {
@@ -470,19 +481,21 @@
     align-items: flex-start;
 
 
-    &__img {
-        margin-bottom: rem(30);
+    &__img-link {
         width: 100%;
-        border-radius: rem(50);
         max-height: rem(312);
+        height: 100%;
+        display: block;
+        margin-bottom: rem(30);
+        border-radius: rem(50);
         overflow: hidden;
+    }
 
-        img {
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__block {
@@ -510,14 +523,14 @@
         font-weight: 700;
         line-height: 150%;
         margin-bottom: rem(50);
+    }
 
-        a {
-            text-decoration: none;
-            color: white;
+    &__title-link {
+        text-decoration: none;
+        color: white;
 
-            &:hover {
-                text-decoration: underline;
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
 
