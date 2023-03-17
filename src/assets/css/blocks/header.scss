@@ -36,6 +36,12 @@
     @include adp("max-width", 150, 100);
 }
 
+.header__nav-block {
+    @media (max-width: em(900)) {
+        display: none;
+    }
+}
+
 .header__logo {
     max-width: 100%;
     object-fit: contain;
