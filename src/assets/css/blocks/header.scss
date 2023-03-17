@@ -1,13 +1,13 @@
 .header {
     padding: rem(15) 0;
-    @include adp("padding-top", 20, 10);
-    @include adp("padding-bottom", 20, 10);
+    @include adp("padding-top", 15, 10);
+    @include adp("padding-bottom", 15, 10);
     position: fixed;
     backdrop-filter: blur(30px);
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1001;
 
     &::after {
         content: "";
@@ -34,13 +34,13 @@
     justify-content: center;
     max-width: rem(150);
     @include adp("max-width", 150, 100);
-    height: rem(60);
 }
 
 .header__logo {
-    max-width: 100%;
+    max-width: rem(100);
     object-fit: contain;
     max-height: 100%;
+    @include adp('max-width', 100, 70);
 }
 
 .header__list {

@@ -175,14 +175,78 @@
     }
 }
 
-.intro__explore-num {
-    p:first-child {
-        font-family: 'Monument';
-        font-size: rem(30);
-        margin-bottom: rem(10);
+.intro__explore-wrapper {
+    &:nth-of-type(1) .intro__explore-num {
+        counter-reset: ms-1 var(--numbers-1);
+        animation: count-1 1.5s steps(50) forwards;
+
+        &:before {
+            content: counter(ms-1);
+        }
+        @keyframes count-1 {
+            0% {
+                --numbers-1: 0;
+            }
+            100% {
+                --numbers-1: 50;
+            }
+        }
+    }
+    &:nth-of-type(2) .intro__explore-num {
+        counter-reset: ms-2 var(--numbers-2);
+        animation: count-2 1.5s steps(35) forwards;
+
+        &:before {
+            content: counter(ms-2);
+        }
+        @keyframes count-2 {
+            0% {
+                --numbers-2: 0;
+            }
+            100% {
+                --numbers-2: 35;
+            }
+        }
+    }
+    &:nth-of-type(3) .intro__explore-num {
+        counter-reset: ms-3 var(--numbers-3);
+        animation: count-3 1.5s steps(23) forwards;
+
+        &:before {
+            content: counter(ms-3);
+        }
+        @keyframes count-3 {
+            0% {
+                --numbers-3: 0;
+            }
+            100% {
+                --numbers-3: 23;
+            }
+        }
     }
 
     p:last-child {
         color: #818698;
     }
+}
+.intro__explore-num{
+    font-family: 'Monument';
+    font-size: rem(30);
+    margin-bottom: rem(10);
+}
+
+@property --numbers-1 {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
+}
+@property --numbers-2 {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
+}
+@property --numbers-3 {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
 }
