@@ -37,22 +37,21 @@
 }
 
 .header__logo {
-    max-width: rem(100);
+    max-width: 100%;
     object-fit: contain;
     max-height: 100%;
-    @include adp('max-width', 100, 70);
 }
 
 .header__list {
     display: flex;
     gap: rem(20) rem(40);
 
-    @media (max-width: em(1023)) {
+    @media (max-width: em(900)) {
         flex-direction: column;
         align-items: center;
         text-align: center;
         row-gap: rem(80);
-        padding: rem(100) 0 0;
+        padding: rem(50) 0 0;
     }
 }
 
@@ -68,7 +67,7 @@
 }
 
 .header__button {
-    @media (max-width: em(1023)) {
+    @media (max-width: em(900)) {
         display: none;
     }
 }
